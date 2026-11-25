@@ -1,0 +1,6 @@
+﻿psf/
+psfxl/
+*.raw
+*.log
+*.out
+.simvision/
