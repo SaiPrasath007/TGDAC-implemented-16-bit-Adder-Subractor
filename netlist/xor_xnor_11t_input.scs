@@ -1,0 +1,54 @@
+// Generated for: spectre
+// Generated on: Nov 12 21:46:26 2026
+// Design library name: cadence_project
+// Design cell name: xor_xnor_11t
+// Design view name: schematic
+simulator lang=spectre
+global 0
+include "/home/buet/cadence/gpdk180_v3.3/models/spectre/gpdk.scs" section=stat
+
+// Library name: cadence_project
+// Cell name: xor_xnor_11t
+// View name: schematic
+PM5 (net21 a vdc vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+PM4 (xnor b net21 vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+PM3 (xnor b\' a vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+PM2 (b\' b vdc vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+PM1 (b a xor vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+PM0 (a b xor vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+NM4 (xnor a b gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+NM3 (xnor b a gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+NM2 (b\' b gnd gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+NM1 (xor a b\' gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+NM0 (xor b\' a gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+V1 (vdc 0) vsource dc=1.8 type=dc
+V3 (gnd 0) vsource dc=0 type=dc
+V0 (a 0) vsource type=pulse val0=0 val1=1.8 period=10n rise=100.0p \
+        fall=100.0p width=5n
+V2 (b 0) vsource type=pulse val0=0 val1=1.8 period=20n rise=100.0p \
+        fall=100.0p width=10n
+simulatorOptions options reltol=1e-3 vabstol=1e-6 iabstol=1e-12 temp=27 \
+    tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 maxnotes=5 maxwarns=5 \
+    digits=5 cols=80 pivrel=1e-3 sensfile="../psf/sens.output" \
+    checklimitdest=psf 
+tran tran stop=100n errpreset=moderate write="spectre.ic" \
+    writefinal="spectre.fc" annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts  where=rawfile
+saveOptions options save=allpub

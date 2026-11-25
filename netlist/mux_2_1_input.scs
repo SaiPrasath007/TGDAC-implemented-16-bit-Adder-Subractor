@@ -1,0 +1,46 @@
+// Generated for: spectre
+// Generated on: Nov 12 18:48:30 2026
+// Design library name: cadence_project
+// Design cell name: mux_2_1
+// Design view name: schematic
+simulator lang=spectre
+global 0
+include "/home/buet/cadence/gpdk180_v3.3/models/spectre/gpdk.scs" section=stat
+
+// Library name: cadence_project
+// Cell name: mux_2_1
+// View name: schematic
+PM2 (s\' s vdc vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+PM0 (d1 s\' y vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+PM1 (y s d0 vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+NM2 (y s d1 gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+NM1 (d0 s\' y gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+NM0 (s\' s gnd gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+V6 (g 0) vsource dc=0 type=dc
+V4 (v 0) vsource dc=1.8 type=dc
+V2 (s 0) vsource type=pulse val0=0 val1=1.8V period=40n rise=100.0p \
+        fall=100.0p width=20n
+V1 (d1 0) vsource type=pulse val0=0 val1=1.8V period=20n rise=100.0p \
+        fall=100.0p width=10n
+V0 (d0 0) vsource type=pulse val0=0 val1=1.8V period=10n rise=100.0p \
+        fall=100.0p width=5n
+simulatorOptions options reltol=1e-3 vabstol=1e-6 iabstol=1e-12 temp=27 \
+    tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 maxnotes=5 maxwarns=5 \
+    digits=5 cols=80 pivrel=1e-3 sensfile="../psf/sens.output" \
+    checklimitdest=psf 
+tran tran stop=100n errpreset=moderate write="spectre.ic" \
+    writefinal="spectre.fc" annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts  where=rawfile
+saveOptions options save=allpub

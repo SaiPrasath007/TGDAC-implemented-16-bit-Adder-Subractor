@@ -1,0 +1,298 @@
+// Generated for: spectre
+// Generated on: Nov 23 15:23:58 2026
+// Design library name: cadence_project
+// Design cell name: adder_subractor_16bit
+// Design view name: schematic
+simulator lang=spectre
+global 0
+include "/home/buet/cadence/gpdk180_v3.3/models/spectre/gpdk.scs" section=stat
+
+// Library name: cadence_project
+// Cell name: compressor_1_0
+// View name: schematic
+subckt compressor_1_0 a b cin\' cout gnd sum vdc
+    PM9 (cin axnorb cout vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM8 (cout axorb a vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM7 (cin\' axnorb sum vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM6 (sum axorb cin vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM5 (cin cin\' vdc vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM4 (axnorb axorb vdc vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM3 (b\' a\' axorb vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM2 (axorb a b vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM1 (b\' b vdc vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM0 (a\' a vdc vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM9 (cout axorb cin gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM8 (a axnorb cout gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM7 (sum axorb cin\' gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM6 (cin axnorb sum gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM5 (cin cin\' gnd gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM4 (axnorb axorb gnd gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM3 (axorb a b\' gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM2 (b a\' axorb gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM1 (b\' b gnd gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM0 (a\' a gnd gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+ends compressor_1_0
+// End of subcircuit definition.
+
+// Library name: cadence_project
+// Cell name: compressor_0_1
+// View name: schematic
+subckt compressor_0_1 a b cin cout\' gnd sum vdc
+    PM9 (cin\' axnorb cout\' vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p \
+        ps=5.2u pd=5.2u m=(1)*(1)
+    PM8 (cout\' axorb a\' vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM7 (cin\' axnorb sum vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM6 (sum axorb cin vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM5 (cin\' cin vdc vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM4 (axnorb axorb vdc vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM3 (b\' a\' axorb vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM2 (axorb a b vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM1 (b\' b vdc vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM0 (a\' a vdc vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM9 (cout\' axorb cin\' gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p \
+        ps=5.2u pd=5.2u m=(1)*(1)
+    NM8 (a\' axnorb cout\' gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p \
+        ps=5.2u pd=5.2u m=(1)*(1)
+    NM7 (sum axorb cin\' gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM6 (cin axnorb sum gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM5 (cin\' cin gnd gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM4 (axnorb axorb gnd gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM3 (axorb a b\' gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM2 (b a\' axorb gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM1 (b\' b gnd gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM0 (a\' a gnd gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+ends compressor_0_1
+// End of subcircuit definition.
+
+// Library name: cadence_project
+// Cell name: xor_xnor_11t
+// View name: schematic
+subckt xor_xnor_11t a b gnd vdc xnor xor
+    PM5 (net21 a vdc vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM4 (xnor b net21 vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM3 (xnor b\' a vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM2 (b\' b vdc vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM1 (b a xor vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+    PM0 (a b xor vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+    NM4 (xnor a b gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+    NM3 (xnor b a gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u pd=5.2u \
+        m=(1)*(1)
+    NM2 (b\' b gnd gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM1 (xor a b\' gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM0 (xor b\' a gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+ends xor_xnor_11t
+// End of subcircuit definition.
+
+// Library name: cadence_project
+// Cell name: full_adder
+// View name: schematic
+subckt full_adder a b cin cout gnd sum vdc
+    I0 (a b gnd vdc xnor xor) xor_xnor_11t
+    PM4 (cin\' cin vdc vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM3 (cin xnor cout vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM2 (cout xor a vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM1 (cin\' xnor sum vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM0 (sum xor cin vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM4 (cin\' cin gnd gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM3 (cout xor cin gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM2 (a xnor cout gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM1 (sum xor cin\' gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM0 (cin xnor sum gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+ends full_adder
+// End of subcircuit definition.
+
+// Library name: cadence_project
+// Cell name: xor_gate
+// View name: schematic
+subckt xor_gate a axorb b gnd vdc
+    PM2 (a b axorb vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM1 (axorb a b vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    PM0 (b\' b vdc vdc) pmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM3 (net15 b gnd gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM2 (axorb a net15 gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM1 (axorb b\' a gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+    NM0 (b\' b gnd gnd) nmos1 w=(2u) l=180n as=1.2p ad=1.2p ps=5.2u \
+        pd=5.2u m=(1)*(1)
+ends xor_gate
+// End of subcircuit definition.
+
+// Library name: cadence_project
+// Cell name: adder_subractor_16bit
+// View name: schematic
+V92 (a10 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=50n \
+        rise=100.0p fall=100.0p width=200n
+V86 (b5 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=50n \
+        rise=100.0p fall=100.0p width=150n
+V77 (a9 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=100n \
+        rise=100.0p fall=100.0p width=100n
+V78 (b4 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=100n \
+        rise=100.0p fall=100.0p width=100n
+V97 (b15 0) vsource type=pulse val0=0 val1=1.8 period=100n delay=50n \
+        rise=100.0p fall=100.0p width=50n
+V91 (a8 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=50n \
+        rise=100.0p fall=100.0p width=200n
+V100 (b14 0) vsource type=pulse val0=1.8 val1=0 period=20n rise=100.0p \
+        fall=100.0p width=10n
+V85 (b3 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=50n \
+        rise=100.0p fall=100.0p width=150n
+V76 (a7 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=100n \
+        rise=100.0p fall=100.0p width=100n
+V79 (b2 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=100n \
+        rise=100.0p fall=100.0p width=100n
+V96 (b13 0) vsource type=pulse val0=0 val1=1.8 period=100n delay=50n \
+        rise=100.0p fall=100.0p width=50n
+V90 (a6 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=50n \
+        rise=100.0p fall=100.0p width=200n
+V50 (b1 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=50n \
+        rise=100.0p fall=100.0p width=150n
+V60 (b12 0) vsource type=pulse val0=1.8 val1=0 period=20n rise=100.0p \
+        fall=100.0p width=10n
+V80 (b0 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=100n \
+        rise=100.0p fall=100.0p width=100n
+V75 (a5 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=100n \
+        rise=100.0p fall=100.0p width=100n
+V95 (b11 0) vsource type=pulse val0=0 val1=1.8 period=100n delay=50n \
+        rise=100.0p fall=100.0p width=50n
+V89 (a4 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=50n \
+        rise=100.0p fall=100.0p width=200n
+V81 (a15 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=100n \
+        rise=100.0p fall=100.0p width=100n
+V99 (b10 0) vsource type=pulse val0=1.8 val1=0 period=20n rise=100.0p \
+        fall=100.0p width=10n
+V74 (a3 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=100n \
+        rise=100.0p fall=100.0p width=100n
+V94 (a14 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=50n \
+        rise=100.0p fall=100.0p width=200n
+V57 (b9 0) vsource type=pulse val0=0 val1=1.8 period=100n delay=50n \
+        rise=100.0p fall=100.0p width=50n
+V88 (a2 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=50n \
+        rise=100.0p fall=100.0p width=200n
+V82 (a13 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=100n \
+        rise=100.0p fall=100.0p width=100n
+V98 (b8 0) vsource type=pulse val0=1.8 val1=0 period=20n rise=100.0p \
+        fall=100.0p width=10n
+V35 (a1 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=100n \
+        rise=100.0p fall=100.0p width=100n
+V93 (a12 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=50n \
+        rise=100.0p fall=100.0p width=200n
+V87 (b7 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=50n \
+        rise=100.0p fall=100.0p width=150n
+V84 (b6 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=100n \
+        rise=100.0p fall=100.0p width=100n
+V83 (a11 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=100n \
+        rise=100.0p fall=100.0p width=100n
+V64 (m 0) vsource type=pulse val0=1.8 val1=0 period=42.94967296 \
+        rise=100.0p fall=100.0p width=21.47483648
+V0 (a0 0) vsource type=pulse val0=0 val1=1.8 period=500n delay=50n \
+        rise=100.0p fall=100.0p width=200n
+V34 (gnd 0) vsource dc=0 type=dc
+V33 (vdc 0) vsource dc=1.8 type=dc
+I60 (a1 bo1 net173 net179 gnd s1 vdc) compressor_1_0
+I61 (a8 bo8 net167 net170 gnd s8 vdc) compressor_1_0
+I62 (a15 bo15 net171 cout gnd s15 vdc) compressor_1_0
+I59 (a14 bo14 net177 net171 gnd s14 vdc) compressor_0_1
+I57 (a0 bo0 m net173 gnd s0 vdc) compressor_0_1
+I58 (a7 bo7 net172 net167 gnd s7 vdc) compressor_0_1
+I56 (a12 bo12 net189 net182 gnd s12 vdc) full_adder
+I11 (a11 bo11 net183 net189 gnd s11 vdc) full_adder
+I3 (a3 bo3 net185 net188 gnd s3 vdc) full_adder
+I52 (a4 bo4 net188 net184 gnd s4 vdc) full_adder
+I2 (a2 bo2 net179 net185 gnd s2 vdc) full_adder
+I10 (a10 bo10 net176 net183 gnd s10 vdc) full_adder
+I53 (a5 bo5 net184 net178 gnd s5 vdc) full_adder
+I55 (a13 bo13 net182 net177 gnd s13 vdc) full_adder
+I54 (a6 bo6 net178 net172 gnd s6 vdc) full_adder
+I9 (a9 bo9 net170 net176 gnd s9 vdc) full_adder
+I76 (b14 bo14 m gnd vdc) xor_gate
+I77 (b13 bo13 m gnd vdc) xor_gate
+I75 (b15 bo15 m gnd vdc) xor_gate
+I78 (b12 bo12 m gnd vdc) xor_gate
+I74 (b11 bo11 m gnd vdc) xor_gate
+I73 (b10 bo10 m gnd vdc) xor_gate
+I71 (b8 bo8 m gnd vdc) xor_gate
+I72 (b9 bo9 m gnd vdc) xor_gate
+I68 (b6 bo6 m gnd vdc) xor_gate
+I67 (b7 bo7 m gnd vdc) xor_gate
+I69 (b5 bo5 m gnd vdc) xor_gate
+I70 (b4 bo4 m gnd vdc) xor_gate
+I66 (b3 bo3 m gnd vdc) xor_gate
+I65 (b2 bo2 m gnd vdc) xor_gate
+I64 (b1 bo1 m gnd vdc) xor_gate
+I63 (b0 bo0 m gnd vdc) xor_gate
+simulatorOptions options reltol=1e-3 vabstol=1e-6 iabstol=1e-12 temp=27 \
+    tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 maxnotes=5 maxwarns=5 \
+    digits=5 cols=80 pivrel=1e-3 sensfile="../psf/sens.output" \
+    checklimitdest=psf 
+tran tran stop=500n errpreset=moderate write="spectre.ic" \
+    writefinal="spectre.fc" annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts  where=rawfile
+saveOptions options save=allpub
